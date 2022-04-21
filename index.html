@@ -1,6 +1,33 @@
-<!DOCTYPE>
-<html>
-  <body>
-    こんにちは<br><a href="https://github.com/ayame113/">GitHubアカウント</a>
-  </body>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ayame113のホームページ</title>
+	</head>
+	<body>
+		<main>
+			<div>
+				<a href="https://github.com/ayame113/">@ayame113</a>のGitHubリポジトリ一覧。
+			</div>
+		</main>
+	</body>
+	<script type="module">
+	const main = document.querySelector("main");
+		const res = await fetch("https://api.github.com/users/ayame113/repos");
+		const repos = await res.json();
+		for (const repo of repos) {
+			if (repo.fork) {
+				continue;
+			}
+			const div = document.createElement("div");
+			div.innerHTML = `
+			<a href=${repo.html_url} target="_blank" style="display: block;color: black;text-decoration: none;border: 1px solid gray;border-radius: 0.5em;margin: 1em;padding: 0.5em;">
+			<h3>${repo.full_name}</h3>
+			<span>☆${repo.stargazers_count}</span><br>
+			<span>${repo.description ?? ''}</span>
+			</a>
+			`
+			main.appendChild(div)
+		}
+	</script>
 </html>
