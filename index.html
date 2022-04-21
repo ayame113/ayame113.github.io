@@ -12,7 +12,7 @@
 		</main>
 	</body>
 	<script type="module">
-	const main = document.querySelector("main");
+		const main = document.querySelector("main");
 		const res = await fetch("https://api.github.com/users/ayame113/repos");
 		const repos = await res.json();
 		for (const repo of repos) {
