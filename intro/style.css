@@ -124,14 +124,14 @@ img {
   ul {
     display: block;
     margin: 0;
-    padding: 0;
+    padding: 0 1em;
 
     li {
       display: block;
       position: relative;
       overflow: hidden;
       font-size: 120%;
-      width: 60%;
+      max-width: 360px;
       margin: 1.5em auto;
       border-radius: 0.5em;
       /* background-color: #617676; */
