@@ -1,0 +1,220 @@
+:root {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+div,
+main,
+section,
+article {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  background-color: darkslategray;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+nav {
+  ol {
+    padding: 0;
+  }
+
+  li {
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+article {
+  padding: 0.5em;
+  margin: 3em 0;
+  border: 1px white solid;
+  border-radius: 0.75em;
+  box-shadow: black 0.5em 0.5em 3em -2em;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline wavy;
+  text-underline-offset: 0.3em;
+  margin-bottom: 2em;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: underline dashed;
+  text-underline-offset: 0.3em;
+}
+
+a {
+  color: lightblue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media (hover: none) {
+    & {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+img {
+  width: 90%;
+}
+
+#profile {
+  img {
+    display: block;
+    width: 6em;
+    margin: 2em auto;
+    border: 2px solid white;
+    border-radius: 100%;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  dl {
+    width: fit-content;
+    margin: 1em auto;
+
+    dt {
+      margin-top: 1em;
+    }
+
+    dd {
+      margin-left: 6em;
+    }
+  }
+}
+
+#history {
+  table {
+    margin: 1em auto;
+    border-collapse: collapse;
+    text-align: center;
+
+    tr:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+
+    td {
+      padding: 0.2em 0.5em;
+    }
+  }
+}
+
+#foods {
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      font-size: 120%;
+      width: 60%;
+      margin: 1.5em auto;
+      border-radius: 0.5em;
+      /* background-color: #617676; */
+      box-shadow: black 0.5em 0.5em 3em -2em;
+      text-align: center;
+      transition: transform 0.2s, background-color 0.2s;
+
+      &:hover {
+        background-color: #778787;
+        transform: scale(1.02);
+      }
+
+      &::before {
+        background-image: var(--image-url);
+        background-size: 250%;
+        background-position: center;
+        filter: blur(30px) brightness(100%);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        content: '';
+        z-index: -1;
+      }
+
+      a {
+        display: block;
+        color: cornflowerblue;
+      }
+
+      img {
+        display: block;
+        margin: 1em auto 0.5em;
+        width: 90%;
+        height: 250px;
+        object-fit: contain;
+      }
+
+      div {
+        background-color: #ffffffbb;
+        padding: 0.5em;
+      }
+    }
+
+    #foods-kotsubu {
+      --image-url: url("./kotsubu.png");
+    }
+
+    #foods-kinoko {
+      --image-url: url("./kinoko.webp");
+    }
+
+    #foods-galbo {
+      --image-url: url("./galbo.png");
+    }
+
+    #foods-lipton {
+      --image-url: url("./lipton.png");
+    }
+
+  }
+
+}
+
+section {
+  margin: 3em 0;
+  text-align: right;
+
+  a {
+    display: block;
+    width: fit-content;
+    padding: 0.5em 0.75em;
+    margin: auto;
+    margin-right: 0.5em;
+    border-radius: 0.5em;
+    box-shadow: black 0.5em 0.5em 1em -0.75em;
+    background-color: white;
+    color: darkslategray;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-0.25em);
+    }
+  }
+}
